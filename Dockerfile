@@ -6,12 +6,12 @@ ENV BUNDLE_BIN_DIR="$BUNDLE_BIN" \
 
 # https://github.com/arwineap/docker-rubyalpine-nokogiri/blob/master/Dockerfile
 # https://github.com/andrius/alpine-ruby/blob/master/Dockerfile-3.7
-# pre install native extensions like nokogiri pg bcrypt node-sass
+# pre install native extensions like nokogiri pg bcrypt
 RUN apk add --no-cache --virtual .build-deps \
   build-base \
   libxml2-dev libxslt-dev \
 && apk add --no-cache tzdata postgresql-dev \
-&& gem install rails -v 5.2.0 \
+&& gem install rails -v 5.2.1 \
 && gem install bcrypt \
 && rails new /tmp/dummy --database=postgresql --skip-sprockets --webpack --skip-bundle  \
 && cd /tmp/dummy \
