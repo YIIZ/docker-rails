@@ -1,3 +1,8 @@
+## Pre-installed native gems
+- nokogiri
+- pg
+- bcrypt
+
 
 ## Tips
 
