@@ -1,4 +1,4 @@
-FROM ruby:2.5.1-alpine
+FROM ruby:2.5.3-alpine
 # fix bundle bin?
 # https://github.com/docker-library/ruby/pull/191
 ENV BUNDLE_BIN_DIR="$BUNDLE_BIN" \
@@ -11,7 +11,7 @@ RUN apk add --no-cache --virtual .build-deps \
   build-base \
   libxml2-dev libxslt-dev \
 && apk add --no-cache tzdata postgresql-dev \
-&& gem install rails -v 5.2.1 \
+&& gem install rails -v 5.2.2 \
 && gem install bcrypt \
 && rails new /tmp/dummy --database=postgresql --skip-sprockets --webpack --skip-bundle  \
 && cd /tmp/dummy \
