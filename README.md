@@ -8,7 +8,7 @@
 
 Use generated Gemfile.lock to minimize bundle installation
 ```
-docker run --rm -it rhyzx/rails cat /Gemfile.lock > ./Gemfile.lock
+docker run --rm -it teambun/rails cat /Gemfile.lock > ./Gemfile.lock
 ```
 
 
@@ -32,7 +32,7 @@ COPY app/javascript /myapp/app/javascript
 RUN yarn run webpack --config "config/webpack/${NODE_ENV}.js"
 
 
-FROM rhyzx/rails
+FROM teambun/rails
 # something
 COPY --from=assets /myapp/public/packs /myapp/public/packs
 ```
